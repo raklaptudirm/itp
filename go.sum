@@ -11,3 +11,11 @@ github.com/wayneashleyberry/terminal-dimensions v1.1.0/go.mod h1:2lc/0eWCObmhRcz
 golang.org/x/sys v0.0.0-20210630005230-0f9fa26af87c/go.mod h1:oPkhp1MJrh7nUepCBck5+mAzfO9JrbApNNgaTdGDITg=
 golang.org/x/sys v0.0.0-20220610221304-9f5ed59c137d h1:Zu/JngovGLVi6t2J3nmAf3AoTDwuzw85YZ3b9o4yU7s=
 golang.org/x/sys v0.0.0-20220610221304-9f5ed59c137d/go.mod h1:oPkhp1MJrh7nUepCBck5+mAzfO9JrbApNNgaTdGDITg=
+golang.org/x/sys v0.0.0-20220615213510-4f61da869c0c h1:aFV+BgZ4svzjfabn8ERpuB4JI4N6/rdy1iusx77G3oU=
+golang.org/x/sys v0.0.0-20220615213510-4f61da869c0c/go.mod h1:oPkhp1MJrh7nUepCBck5+mAzfO9JrbApNNgaTdGDITg=
+laptudirm.com/x/ansi v0.0.0-20220615095359-3f441c9a6858 h1:AKc+ZXqjh4HKi5EFp7Ghlz/Kfy1ZUPrLqlML4GILQTg=
+laptudirm.com/x/ansi v0.0.0-20220615095359-3f441c9a6858/go.mod h1:qw1vywR1Z+eGUOyxQEfwg86EmoFpiv6VjToh5ICyEgM=
+laptudirm.com/x/ansi v0.1.0-alpha h1:RMeUR7kf8aY2wozYomJfXM277bfEMqqOYlLzJPb4078=
+laptudirm.com/x/ansi v0.1.0-alpha/go.mod h1:qw1vywR1Z+eGUOyxQEfwg86EmoFpiv6VjToh5ICyEgM=
+laptudirm.com/x/terminal v0.1.0 h1:QNGES1WC9Y4r0l32ERTm3/8c36H5ieNNe5O4myZPbbc=
+laptudirm.com/x/terminal v0.1.0/go.mod h1:Sq7GzMNWRK9uPSfIniioYW0c0GpOkjD3meFJrhvYibc=

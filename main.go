@@ -14,6 +14,7 @@
 package main
 
 import (
+	"bufio"
 	"crypto/sha256"
 	"fmt"
 	"math/big"
@@ -24,13 +25,22 @@ import (
 
 	"github.com/qeesung/image2ascii/ascii"
 	"github.com/qeesung/image2ascii/convert"
+	"laptudirm.com/x/terminal"
 )
 
+var errUsage = fmt.Errorf("usage: itp <image path>")
+
 func main() {
+	if err := mainFunc(); err != nil {
+		fmt.Fprintln(os.Stderr, err)
+		os.Exit(1)
+	}
+}
+
+func mainFunc() error {
 	// itp picture.jpg
 	if len(os.Args) != 2 {
-		fmt.Fprintln(os.Stderr, "usage: itp <image path>")
-		os.Exit(1)
+		return errUsage
 	}
 
 	fileName := os.Args[1]
@@ -46,7 +56,25 @@ func main() {
 
 	formatted := converter.ImageFile2ASCIIString(fileName, &options)
 
-	fmt.Println(formatted) // show preview
+	term := terminal.NewTerminal(os.Stdout)
+	reader := bufio.NewReader(os.Stdin)
+
+	term.SaveCursorPosition()
+	term.Println(formatted) // show preview
+
+	term.Print("\nProceed with prime search? [y/N] ")
+	response, err := reader.ReadString('\n')
+	if err != nil {
+		return err
+	}
+
+	term.RestoreCursorPosition()
+	term.EraseTillScreenEnd()
+
+	if response = strings.Trim(response, " \n\r\t"); response != "y" {
+		term.Println("Prime search aborted.")
+		return nil
+	}
 
 	img, width := formatImage(formatted) // remove word wrapping
 	prime := searchPrime(img)            // search for similar prime
@@ -54,6 +82,8 @@ func main() {
 	// display
 	fmt.Println(formatToImage(prime, width)) // number with wrapping
 	fmt.Println(prime)                       // raw number
+
+	return nil
 }
 
 // formatImage removes word wrapping from the image and returns it as a

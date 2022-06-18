@@ -8,5 +8,6 @@ require (
 	github.com/nfnt/resize v0.0.0-20180221191011-83c6a9932646 // indirect
 	github.com/qeesung/image2ascii v1.0.1 // indirect
 	github.com/wayneashleyberry/terminal-dimensions v1.1.0 // indirect
-	golang.org/x/sys v0.0.0-20220610221304-9f5ed59c137d // indirect
+	golang.org/x/sys v0.0.0-20220615213510-4f61da869c0c // indirect
+	laptudirm.com/x/terminal v0.1.0 // indirect
 )
