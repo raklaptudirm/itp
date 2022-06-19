@@ -80,8 +80,9 @@ func mainFunc() error {
 	prime := searchPrime(img)            // search for similar prime
 
 	// display
-	fmt.Println(formatToImage(prime, width)) // number with wrapping
-	fmt.Println(prime)                       // raw number
+	term.Println()
+	term.Println(formatToImage(prime, width)) // number with wrapping
+	term.Println(prime)                       // raw number
 
 	return nil
 }
@@ -143,6 +144,8 @@ func formatToImage(prime []byte, width int) string {
 // given number. The []byte contains the ascii values of each digit of the
 // number. The returned number is also in the same format.
 func searchPrime(raw []byte) []byte {
+	term := terminal.NewTerminal(os.Stdout)
+
 	// seed the prng
 	rand.Seed(time.Now().Unix())
 
@@ -155,11 +158,14 @@ func searchPrime(raw []byte) []byte {
 
 	var n big.Int
 	for i := 0; ; i++ {
-		// print index of number and it's sha256 sum
-		fmt.Printf("prime %5d: %x\n", i, sha256.Sum256(img))
+		term.EraseLine()
+		term.MoveCursorToColumn(1)
+		term.Printf("Searching for primes: try #%d | %x", i, sha256.Sum256(img))
 
 		// check if number is prime
 		if n.SetString(string(img), 10); n.ProbablyPrime(testCount) {
+			term.EraseLine()
+			term.Printf("Prime found after %d tries: %x\n", i, sha256.Sum256(img))
 			return img
 		}
 
