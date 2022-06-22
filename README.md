@@ -2,6 +2,14 @@
 
 <samp>itp</samp> is a command line tool to generate large prime numbers which look like any arbitrary image.
 
+<!-- Preview -->
+<div align="center">
+  <a href="https://gist.github.com/raklaptudirm/fc6fd8452fefc246951efca730e9e214">
+    <img src="https://user-images.githubusercontent.com/68542775/174952364-39ce9031-6ab0-4e7b-a15f-2665bdc88056.png">
+  </a>
+</div>
+
+
 ### Installation and Usage
 
 ```
