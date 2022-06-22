@@ -82,7 +82,7 @@ func mainFunc() error {
 	// display
 	term.Println()
 	term.Println(formatToImage(prime, width)) // number with wrapping
-	term.Println(prime)                       // raw number
+	term.Println(string(prime))               // raw number
 
 	return nil
 }
@@ -165,6 +165,7 @@ func searchPrime(raw []byte) []byte {
 		// check if number is prime
 		if n.SetString(string(img), 10); n.ProbablyPrime(testCount) {
 			term.EraseLine()
+			term.MoveCursorToColumn(1)
 			term.Printf("Prime found after %d tries: %x\n", i, sha256.Sum256(img))
 			return img
 		}
