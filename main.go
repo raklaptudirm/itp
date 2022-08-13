@@ -56,7 +56,7 @@ func mainFunc() error {
 
 	formatted := converter.ImageFile2ASCIIString(fileName, &options)
 
-	term := terminal.NewTerminal(os.Stdout)
+	term := terminal.New(os.Stdout)
 	reader := bufio.NewReader(os.Stdin)
 
 	term.SaveCursorPosition()
@@ -144,7 +144,7 @@ func formatToImage(prime []byte, width int) string {
 // given number. The []byte contains the ascii values of each digit of the
 // number. The returned number is also in the same format.
 func searchPrime(raw []byte) []byte {
-	term := terminal.NewTerminal(os.Stdout)
+	term := terminal.New(os.Stdout)
 
 	// seed the prng
 	rand.Seed(time.Now().Unix())
