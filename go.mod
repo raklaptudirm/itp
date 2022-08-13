@@ -4,7 +4,7 @@ go 1.18
 
 require (
 	github.com/qeesung/image2ascii v1.0.1
-	laptudirm.com/x/terminal v0.1.0
+	laptudirm.com/x/terminal v0.3.0
 )
 
 require (
@@ -13,5 +13,5 @@ require (
 	github.com/nfnt/resize v0.0.0-20180221191011-83c6a9932646 // indirect
 	github.com/stretchr/testify v1.7.4 // indirect
 	github.com/wayneashleyberry/terminal-dimensions v1.1.0 // indirect
-	golang.org/x/sys v0.0.0-20220615213510-4f61da869c0c // indirect
+	golang.org/x/sys v0.0.0-20220811171246-fbc7d0a398ab // indirect
 )
